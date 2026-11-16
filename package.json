@@ -1,0 +1,26 @@
+{
+  "name": "librecamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:web": "pnpm --filter web dev",
+    "dev:backend": "cd apps/backend && uv run python manage.py runserver",
+    "dev": "concurrently \"pnpm dev:web\" \"pnpm dev:backend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.2",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
